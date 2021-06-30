@@ -1,5 +1,6 @@
 # spammer
 This script will allow you to spam wherever your cursor is | Your text, random text, random text+length, text from file!
+Works only with installed PyAutoGUI (pip3 install pyautogui)
 
 # how to use
 First, you need to choose a spam mode:
