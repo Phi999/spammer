@@ -4,6 +4,8 @@ import pyautogui
 import time
 import random
 
+file = open('text.txt', 'r')
+file.close()
 message = ''
 print('1. Your text\n2. Text with random symbols\n3. Text with random symbols and length\n4. Text from file')
 choice = int(input('Choose an option: '))
