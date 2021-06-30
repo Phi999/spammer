@@ -3,6 +3,7 @@
 import pyautogui
 import time
 import random
+pyautogui.FAILSAFE = False
 
 file = open('text.txt', 'r')
 file.close()
