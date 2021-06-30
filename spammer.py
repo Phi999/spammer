@@ -3,8 +3,8 @@
 import pyautogui
 import time
 import random
-pyautogui.FAILSAFE = False
 
+pyautogui.FAILSAFE = False
 file = open('text.txt', 'r')
 file.close()
 message = ''
@@ -63,20 +63,14 @@ elif choice == 3:
 
 elif choice == 4:
     file = open('text.txt', 'r')
-    n = int(input('Enter the maximum length of the text (recommended: 1000): '))
-    length = range(1, n)
-    delay = int(input('Enter spam delay in "ms": '))
+    delay = int(input('Enter character delay in "ms": '))
     delay = float(delay / 1000)
-    count = int(input('How many messages? (recommended: 1000): '))
     print('Nice! You have only 5 seconds to select target!')
-    time.sleep(5)
     lines = file.readlines()
+    time.sleep(5)
     for line in lines:
         text = line.strip()
-        message = ''
-        message += str(text)
-        pyautogui.write(message)
+        pyautogui.write(text, interval=delay)
         pyautogui.press('enter')
-        time.sleep(delay)
 
     file.close()
