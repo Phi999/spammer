@@ -62,15 +62,17 @@ elif choice == 3:
         time.sleep(delay)
 
 elif choice == 4:
-    file = open('text.txt', 'r')
-    delay = int(input('Enter character delay in "ms": '))
-    delay = float(delay / 1000)
-    print('Nice! You have only 5 seconds to select target!')
-    lines = file.readlines()
-    time.sleep(5)
-    for line in lines:
-        text = line.strip()
-        pyautogui.write(text, interval=delay)
-        pyautogui.press('enter')
+    try:
+        file = open('text.txt', 'r')
+        delay = int(input('Enter character delay in "ms": '))
+        delay = float(delay / 1000)
+        print('Nice! You have only 5 seconds to select target!')
+        lines = file.readlines()
+        time.sleep(5)
+        for line in lines:
+            text = line.strip()
+            pyautogui.write(text, interval=delay)
+            pyautogui.press('enter')
 
-    file.close()
+    finally:
+        file.close()
