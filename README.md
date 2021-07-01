@@ -1,13 +1,21 @@
 # spammer
-This script will allow you to spam wherever your cursor is | Your text, random text, random text+length, text from file!
+This script will allow you to spam wherever your cursor is!
+
 Works only with installed PyAutoGUI (pip3 install pyautogui)
 
-# how to use
-First, you need to choose a spam mode:
+How to use
+-----------------------------------
+
+Firstly, you need to choose a spam mode:
+***
  ~ Your text and your length;
+
  ~ Random text and your length;
+
  ~ Random text and length;
+
  ~ Text from "text.txt" file (allows you to spam lines from songs)
+ ***
  
 Next, if you choose 1-3 options, you need to enter the information required by the script.
 
