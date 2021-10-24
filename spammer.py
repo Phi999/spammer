@@ -1,14 +1,17 @@
 # -*- coding: utf-8 -*-
 # you need to install "pyautogui" (pip3 install pyautogui)
+# you need to install "essential_generators" (pip install essential-generators)
 import pyautogui
 import time
 import random
+from essential_generators import DocumentGenerator
+
 
 pyautogui.FAILSAFE = False
 file = open('text.txt', 'r')
 file.close()
 message = ''
-print('1. Your text\n2. Text with random symbols\n3. Text with random symbols and length\n4. Text from file')
+print('1. Your text\n2. Text with random symbols\n3. Text with random symbols and length\n4. Text from file\n5. Random sentences')
 choice = int(input('Choose an option: '))
 if choice == 1:
     message = str(input('Enter your message: '))
@@ -76,3 +79,18 @@ elif choice == 4:
 
     finally:
         file.close()
+elif choice == 5:
+    sentences = int(input('How many sentences ? (1 sentence = 1 message)'))
+    delay = int(input('Enter character delay in "ms": '))
+    delay = float(delay / 1000)
+    print('Nice! You have only 5 seconds to select target!')
+    time.sleep(5)
+    gen = DocumentGenerator()
+    for i in range(sentences):
+        pyautogui.write(gen.sentence(), interval=delay)
+        pyautogui.press('enter')
+
+
+
+
+
